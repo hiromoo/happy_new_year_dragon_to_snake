@@ -32,10 +32,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   static const int _rowCount = 3;
   static const int _columnCount = 3;
-  static const String _dragonImageUrl =
-      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha5wpu5v4qbr6eK6hypAd3LiuXjCaO_JAU3Ts7g49lhqTLBXD0l6d7n1sXgicDD5-v7eIx3owuJ0ahyKcnR9SfM878pL-Uw5QLCm5nkqgCPHgExhbqfzl00JU4Z7EoT-gd5Oo1c8v-ujAhaF3jZvOZtdUG8hSLXOnwpn8HI4cGk56HKpt2vvU9gcCOkfxX/s929/eto_tatsu_banzai.png';
-  static const String _snakeImageUrl =
-      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEib_aNImB4YeHc74m6gzwDrVWWWWQG5fBmB_pP_Q1yq1GMuM9vyEJMB7dyCQT-UxQYfw986zxut2N3HewrDOuBw4XM5E45nV_-zSSAqsJ4AG6EEUV7jesvxb-LoBXywW9Yhxx5JkSs2Ttg/s800/hebi.png';
+  static const String _dragonImageFilePath = 'asset/eto_tatsu_banzai.png';
+  static const String _snakeImageFilePath = 'asset/hebi.png';
 
   final _confettiController = ConfettiController(
     duration: const Duration(seconds: 3),
@@ -75,10 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                   onPressed: () {
                                     _onIconButtonPressed(i * _columnCount + j);
                                   },
-                                  icon: Image.network(
+                                  icon: Image.asset(
                                     _isSnakeList[i * _columnCount + j]
-                                        ? _snakeImageUrl
-                                        : _dragonImageUrl,
+                                        ? _snakeImageFilePath
+                                        : _dragonImageFilePath,
                                   ),
                                 ),
                               ),
